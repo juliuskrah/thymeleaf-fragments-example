@@ -49,6 +49,48 @@ public class IndexController {
 		return "blank";
 	}
 
+	@RequestMapping("/panels-wells")
+	public String panelsWells(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Panels Wells");
+
+		return "panels-wells";
+	}
+
+	@RequestMapping("/buttons")
+	public String butons(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Buttons");
+
+		return "buttons";
+	}
+
+	@RequestMapping("/notifications")
+	public String notifications(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Notifications");
+
+		return "notifications";
+	}
+
+	@RequestMapping("/typography")
+	public String typography(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Typography");
+
+		return "typography";
+	}
+
+	@RequestMapping("/icons")
+	public String icons(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Icons");
+
+		return "icons";
+	}
+
+	@RequestMapping("/grid")
+	public String grid(Model model) {
+		model.addAttribute("title", "SB Admin 2 - Grid");
+
+		return "grid";
+	}
+
 	@RequestMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("title", "SB Admin 2 - Login");
