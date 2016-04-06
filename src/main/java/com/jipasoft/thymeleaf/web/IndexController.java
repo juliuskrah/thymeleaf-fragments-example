@@ -1,99 +1,85 @@
 package com.jipasoft.thymeleaf.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
 
 	@RequestMapping({ "/", "/index" })
-	public String index(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Bootstrap Admin Theme");
+	public String index() {
 
 		return "index";
 	}
 
 	@RequestMapping("/tables")
-	public String tables(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Tables");
+	public String tables() {
 
 		return "tables";
 	}
 
 	@RequestMapping("/flot")
-	public String flot(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Flot");
+	public String flot() {
 
 		return "flot";
 	}
 
 	@RequestMapping("/morris")
-	public String morris(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Morris");
+	public String morris() {
 
 		return "morris";
 	}
 
 	@RequestMapping("/forms")
-	public String forms(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Forms");
+	public String forms() {
 
 		return "forms";
 	}
 
 	@RequestMapping("/blank")
-	public String blank(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Blank");
+	public String blank() {
 
 		return "blank";
 	}
 
 	@RequestMapping("/panels-wells")
-	public String panelsWells(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Panels Wells");
+	public String panelsWells() {
 
 		return "panels-wells";
 	}
 
 	@RequestMapping("/buttons")
-	public String butons(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Buttons");
+	public String butons() {
 
 		return "buttons";
 	}
 
 	@RequestMapping("/notifications")
-	public String notifications(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Notifications");
+	public String notifications() {
 
 		return "notifications";
 	}
 
 	@RequestMapping("/typography")
-	public String typography(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Typography");
+	public String typography() {
 
 		return "typography";
 	}
 
 	@RequestMapping("/icons")
-	public String icons(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Icons");
+	public String icons() {
 
 		return "icons";
 	}
 
 	@RequestMapping("/grid")
-	public String grid(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Grid");
+	public String grid() {
 
 		return "grid";
 	}
 
 	@RequestMapping("/login")
-	public String login(Model model) {
-		model.addAttribute("title", "SB Admin 2 - Login");
+	public String login() {
 
 		return "login";
 	}

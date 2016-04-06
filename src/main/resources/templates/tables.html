@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head th:include="fragments/header :: head">
+<head
+	th:include="fragments/header :: head (title='SB Admin 2 - Tables')">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -757,12 +758,18 @@
 	</div>
 	<!-- /#wrapper -->
 
-	<div th:replace="fragments/footer :: jquery">JavaScript tags are loaded here</div>
-	<div th:replace="fragments/footer :: bootsrtapjs">JavaScript tags are loaded here</div>
-	<div th:replace="fragments/footer :: metisjs">JavaScript tags are loaded here</div>
-	<div th:replace="fragments/footer :: jquerydatatables">JavaScript tags are loaded here</div>
-	<div th:replace="fragments/footer :: bootstrapdatatables">JavaScript tags are loaded here</div>
-	<div th:replace="fragments/footer :: sb-admin">JavaScript tags are loaded here</div>
+	<div th:replace="fragments/footer :: jquery">JavaScript tags are
+		loaded here</div>
+	<div th:replace="fragments/footer :: bootsrtapjs">JavaScript tags
+		are loaded here</div>
+	<div th:replace="fragments/footer :: metisjs">JavaScript tags are
+		loaded here</div>
+	<div th:replace="fragments/footer :: jquerydatatables">JavaScript
+		tags are loaded here</div>
+	<div th:replace="fragments/footer :: bootstrapdatatables">JavaScript
+		tags are loaded here</div>
+	<div th:replace="fragments/footer :: sb-admin">JavaScript tags
+		are loaded here</div>
 
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
