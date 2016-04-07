@@ -1,5 +1,5 @@
 # Thymeleaf Fragments Example
-[![Build Status](https://travis-ci.org/juliuskrah/thymeleaf-fragments-example.svg?branch=wild-cards-extras)](https://travis-ci.org/juliuskrah/thymeleaf-fragments-example)
+[![Build Status](https://travis-ci.org/juliuskrah/thymeleaf-fragments-example.svg?branch=master)](https://travis-ci.org/juliuskrah/thymeleaf-fragments-example)
 
 This is to illustrate layouts example in thymeleaf using the Thymeleaf Standard Layout System. For more
 information on using the standard template check out [this][layouts-blog] article.
