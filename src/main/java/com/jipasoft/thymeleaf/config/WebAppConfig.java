@@ -1,5 +1,7 @@
 package com.jipasoft.thymeleaf.config;
 
+import java.nio.charset.Charset;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -49,13 +51,14 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
 	public ViewResolver viewResolver() {
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
 		resolver.setTemplateEngine(templateEngine());
-		resolver.setCharacterEncoding("UTF-8");
+		resolver.setCharacterEncoding(Charset.forName("UTF-8").name());
 		return resolver;
 	}
 
 	private TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setTemplateResolver(templateResolver());
+		engine.setEnableSpringELCompiler(true);
 		return engine;
 	}
 
