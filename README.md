@@ -6,7 +6,7 @@ information on using the standard template check out [this][layouts-blog] articl
 
 The template used in this example was downloaded from [Start Boostrap][sb-admin 2].
 
-This example uses [Thymeleaf 3.0.0.BETA02][Thymeleaf 3 announcement] to render the templates.
+This example uses [Thymeleaf 3.0.0.RELEASE][Thymeleaf 3 announcement] to render the templates.
 
 Some minor configuration changes are required to use Thymeleaf 3 with [Spring 4][Spring Framework].
 
@@ -24,12 +24,12 @@ The fist thing required is to declare your depencies in your `pom.xml`
 <dependency>
   <groupId>org.thymeleaf</groupId>
   <artifactId>thymeleaf</artifactId>
-  <version>3.0.0.BETA02</version>
+  <version>3.0.0.RELEASE</version>
 </dependency>
 <dependency>
   <groupId>org.thymeleaf</groupId>
   <artifactId>thymeleaf-spring4</artifactId>
-  <version>3.0.0.BETA02</version>
+  <version>3.0.0.RELEASE</version>
 </dependency>
 ```
 
@@ -85,5 +85,5 @@ Visit your new application on [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
 
 [layouts-blog]: http://www.thymeleaf.org/doc/articles/layouts.html
 [sb-admin 2]: http://startbootstrap.com/template-overviews/sb-admin-2/
-[Thymeleaf 3 announcement]: http://forum.thymeleaf.org/Thymeleaf-3-0-0-BETA02-just-published-td4029538.html
+[Thymeleaf 3 announcement]: http://forum.thymeleaf.org/Thymeleaf-3-0-is-here-td4029676.html
 [Spring Framework]: http://projects.spring.io/spring-framework/
