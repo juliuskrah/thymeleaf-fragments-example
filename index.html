@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Thymeleaf-fragments-example by juliuskrah</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/juliuskrah/thymeleaf-fragments-example">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/juliuskrah/thymeleaf-fragments-example/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/juliuskrah/thymeleaf-fragments-example/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Thymeleaf-fragments-example</h1>
+          <p>Using Thymeleaf 3 with fragments</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/juliuskrah">juliuskrah</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="thymeleaf-fragments-example" class="anchor" href="#thymeleaf-fragments-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thymeleaf Fragments Example</h1>
+
+<p><a href="https://travis-ci.org/juliuskrah/thymeleaf-fragments-example"><img src="https://travis-ci.org/juliuskrah/thymeleaf-fragments-example.svg?branch=master" alt="Build Status"></a></p>
+
+<p>This is to illustrate layouts example in thymeleaf using the Thymeleaf Standard Layout System. For more
+information on using the standard template check out <a href="http://www.thymeleaf.org/doc/articles/layouts.html">this</a> article.</p>
+
+<p>The template used in this example was downloaded from <a href="http://startbootstrap.com/template-overviews/sb-admin-2/">Start Boostrap</a>.</p>
+
+<p>This example uses <a href="http://forum.thymeleaf.org/Thymeleaf-3-0-is-here-td4029676.html">Thymeleaf 3.0.0.RELEASE</a> to render the templates.</p>
+
+<p>Some minor configuration changes are required to use Thymeleaf 3 with <a href="http://projects.spring.io/spring-framework/">Spring 4</a>.</p>
+
+<h2>
+<a id="pre-requisites" class="anchor" href="#pre-requisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre-requisites</h2>
+
+<ul>
+<li>Maven 3.3+</li>
+<li>Java 8+</li>
+<li>Jetty 9+ or Tomcat 8+ (Optional)</li>
+<li>Spring Framework 4.2.x</li>
+<li>Thymeleaf 3.0.x</li>
+</ul>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>The fist thing required is to declare your depencies in your <code>pom.xml</code></p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+  &lt;<span class="pl-ent">groupId</span>&gt;org.thymeleaf&lt;/<span class="pl-ent">groupId</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;thymeleaf&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;3.0.0.RELEASE&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;
+&lt;<span class="pl-ent">dependency</span>&gt;
+  &lt;<span class="pl-ent">groupId</span>&gt;org.thymeleaf&lt;/<span class="pl-ent">groupId</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;thymeleaf-spring4&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;3.0.0.RELEASE&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<p>The second thing to do is your spring configuration</p>
+
+<div class="highlight highlight-source-java"><pre>@<span class="pl-smi">Configuration</span>
+@<span class="pl-smi">EnableWebMvc</span>
+@ComponentScan(basePackageClasses <span class="pl-k">=</span> { <span class="pl-smi">Controllers</span><span class="pl-k">.</span>class })
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">WebAppConfig</span> <span class="pl-k">extends</span> <span class="pl-e">WebMvcConfigurerAdapter</span> <span class="pl-k">implements</span> <span class="pl-e">ApplicationContextAware</span> {
+    <span class="pl-k">private</span> <span class="pl-smi">ApplicationContext</span> applicationContext;
+
+    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">String</span> <span class="pl-c1">VIEWS</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>classpath:templates/<span class="pl-pds">"</span></span>;
+    <span class="pl-c1">...</span>
+
+    <span class="pl-k">@Bean</span>
+    <span class="pl-k">public</span> <span class="pl-smi">ViewResolver</span> <span class="pl-en">viewResolver</span>() {
+        <span class="pl-smi">ThymeleafViewResolver</span> resolver <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ThymeleafViewResolver</span>();
+        resolver<span class="pl-k">.</span>setTemplateEngine(templateEngine());
+        resolver<span class="pl-k">.</span>setCharacterEncoding(<span class="pl-s"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>);
+        <span class="pl-k">return</span> resolver;
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">TemplateEngine</span> <span class="pl-en">templateEngine</span>() {
+        <span class="pl-smi">SpringTemplateEngine</span> engine <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">SpringTemplateEngine</span>();
+        engine<span class="pl-k">.</span>setTemplateResolver(templateResolver());
+        <span class="pl-k">return</span> engine;
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">ITemplateResolver</span> <span class="pl-en">templateResolver</span>() {
+        <span class="pl-smi">SpringResourceTemplateResolver</span> resolver <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">SpringResourceTemplateResolver</span>();
+        resolver<span class="pl-k">.</span>setApplicationContext(applicationContext);
+        resolver<span class="pl-k">.</span>setPrefix(<span class="pl-c1">VIEWS</span>);
+        resolver<span class="pl-k">.</span>setSuffix(<span class="pl-s"><span class="pl-pds">"</span>.html<span class="pl-pds">"</span></span>);
+        resolver<span class="pl-k">.</span>setTemplateMode(<span class="pl-smi">TemplateMode</span><span class="pl-c1"><span class="pl-k">.</span>HTML</span>);
+        <span class="pl-k">return</span> resolver;
+    }
+}</pre></div>
+
+<p>The first difference with the Thymeleaf 3 configuration is that now the recommended template resolver for Spring applications is 
+<code>SpringResourceTemplateResolver</code>. It needs a reference to the Spring <code>ApplicationContext</code> so the configuration bean has to implement 
+the <code>ApplicationContextAware</code> interface.</p>
+
+<p>The second difference is that the template mode has a value of <code>TemplateMode.HTML</code>. Template modes are not strings anymore and the 
+possible values are a bit different from Thymeleaf 2.</p>
+
+<h2>
+<a id="running-the-application" class="anchor" href="#running-the-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the Application</h2>
+
+<p>Your can run the application by specifying a maven goal <code>mvn jetty:run</code>, which will start an embedded Jetty instance.
+Visit your new application on <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a>.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
