@@ -1,84 +1,84 @@
 package com.jipasoft.thymeleaf.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
 
-	@RequestMapping({ "/", "/index" })
+	@GetMapping({ "/", "/index" })
 	public String index() {
 
 		return "index";
 	}
 
-	@RequestMapping("/tables")
+	@GetMapping("/tables")
 	public String tables() {
 
 		return "tables";
 	}
 
-	@RequestMapping("/flot")
+	@GetMapping("/flot")
 	public String flot() {
 
 		return "flot";
 	}
 
-	@RequestMapping("/morris")
+	@GetMapping("/morris")
 	public String morris() {
 
 		return "morris";
 	}
 
-	@RequestMapping("/forms")
+	@GetMapping("/forms")
 	public String forms() {
 
 		return "forms";
 	}
 
-	@RequestMapping("/blank")
+	@GetMapping("/blank")
 	public String blank() {
 
 		return "blank";
 	}
 
-	@RequestMapping("/panels-wells")
+	@GetMapping("/panels-wells")
 	public String panelsWells() {
 
 		return "panels-wells";
 	}
 
-	@RequestMapping("/buttons")
+	@GetMapping("/buttons")
 	public String butons() {
 
 		return "buttons";
 	}
 
-	@RequestMapping("/notifications")
+	@GetMapping("/notifications")
 	public String notifications() {
 
 		return "notifications";
 	}
 
-	@RequestMapping("/typography")
+	@GetMapping("/typography")
 	public String typography() {
 
 		return "typography";
 	}
 
-	@RequestMapping("/icons")
+	@GetMapping("/icons")
 	public String icons() {
 
 		return "icons";
 	}
 
-	@RequestMapping("/grid")
+	@GetMapping("/grid")
 	public String grid() {
 
 		return "grid";
 	}
 
-	@RequestMapping("/login")
+	@GetMapping("/login")
 	public String login() {
 
 		return "login";

@@ -37,7 +37,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		log.debug("Registering resources...");
+		log.info("Registering resources...");
 		registry.addResourceHandler(RESOURCES_HANDLER).addResourceLocations(RESOURCES_LOCATION);
 	}
 
